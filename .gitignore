@@ -1,0 +1,8 @@
+ExpertDistributorApp/ExpertDistributorApp/obj/
+ExpertDistributorApp/ExpertDistributorApp/bin/
+BusinessLogic/bin/Debug/DAL.pdb
+DAL/obj/Debug/DAL.csprojResolveAssemblyReference.cache
+DAL/obj/
+BusinessLogic/bin/
+BusinessLogic/obj/
+DAL/bin/
