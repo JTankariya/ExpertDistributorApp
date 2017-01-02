@@ -290,7 +290,9 @@ namespace NewExpert.Controllers
             else
             {
                 ViewBag.ClientMenuList = ClientMenuMaster.GetClientMenuByClientId(0);
-                return View(new ClientMaster());
+                var client = new ClientMaster();
+                client.AccountExpiredOn = DateTime.Now.Add(new TimeSpan(365, 0, 0, 0, 0));
+                return View(client);
             }
         }
 
@@ -383,7 +385,16 @@ namespace NewExpert.Controllers
             else
             {
                 ViewBag.MenuList = menus;
-                return View(new ClientMenuMaster());
+                var menu = new ClientMenuMaster();
+                if (menus != null && menus.Count() > 0)
+                {
+                    menu.SrNo = menus.OrderByDescending(x => x.SrNo).FirstOrDefault().SrNo + 1;
+                }
+                else
+                {
+                    menu.SrNo = 1;
+                }
+                return View(menu);
             }
         }
 

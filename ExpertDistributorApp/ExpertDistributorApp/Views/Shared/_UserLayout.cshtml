@@ -133,7 +133,7 @@
                 url: '@Url.Action("DistributorBalanceReport", "Dashboard")',
                 success: function (result) {
                     if (result.IsSuccess) {
-                        window.open("/PDFReports/" + result.ResponseValue + ".PDF", "_blank");
+                        window.open('@Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["PdfReportLocation"]).Replace("~","")'  + "/"+ result.ResponseValue + ".PDF", "_blank");
                     }
                 }
             });

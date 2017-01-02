@@ -77,7 +77,7 @@ namespace BAL
         {
             Dictionary<string, object> param = new Dictionary<string, object>();
             param.Add("@MID", ID);
-            DataTable dt = DBHelper.GetDataTable("DeleteMenu", param, true);
+            DBHelper.ExecuteNonQuery("DeleteMenu", param, true);
             return 1;
         }
 
@@ -104,7 +104,7 @@ namespace BAL
             param.Add("@MHasChildMenu", this.HasChildMenu);
             param.Add("@MHasChildData", this.HasChildData);
             param.Add("@MHasGraph", this.HasGraph);
-            param.Add("@MZoomQuery", this.ZoomQuery);
+            param.Add("@MZoomQuery", (string.IsNullOrEmpty(this.ZoomQuery) ? "" : this.ZoomQuery));
             DataTable dt = DBHelper.GetDataTable("AddMenu", param, true);
 
             if (dt != null && dt.Rows.Count > 0)
@@ -125,7 +125,7 @@ namespace BAL
             }
         }
 
-        public static bool CheckMenuSrNo(int SrNo,int MenuId)
+        public static bool CheckMenuSrNo(int SrNo, int MenuId)
         {
             Dictionary<string, object> param = new Dictionary<string, object>();
             param.Add("@MSrNo", SrNo);

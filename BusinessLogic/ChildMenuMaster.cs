@@ -29,7 +29,7 @@ namespace BAL
                 param.Add("@CQuery", submenu.Query);
                 param.Add("@CHasChildData", submenu.HasChildData);
                 param.Add("@CHasGraph", submenu.HasGraph);
-                param.Add("@CZoomQuery", submenu.ZoomQuery);
+                param.Add("@CZoomQuery", (string.IsNullOrEmpty(submenu.ZoomQuery) ? "" : submenu.ZoomQuery));
 
                 DBHelper.ExecuteNonQuery("SaveChildMenu", param, true);
             }

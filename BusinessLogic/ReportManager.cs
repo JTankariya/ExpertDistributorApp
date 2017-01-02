@@ -58,7 +58,7 @@ namespace BAL
             var filename = GetFullPDFFileName("DistributorBalance", user);
             DeleteOldFiles();
 
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["PDFReports"]) + "/" + filename + ".PDF", FileMode.Create));
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["PdfReportLocation"]) + "/" + filename + ".PDF", FileMode.Create));
             writer.PageEvent = new PDFFooter("Prepared By : " + Convert.ToString(user.FirstName + " " + user.LastName));
             document.Open();
             float[] widths = new float[] { 50f, 60f, 60f, 70f };
