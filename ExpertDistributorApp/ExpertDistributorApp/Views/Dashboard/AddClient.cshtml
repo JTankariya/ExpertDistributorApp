@@ -33,18 +33,24 @@
                                 @Html.TextAreaFor(x => x.CompanyAddress, new { @row = "3", @class = "form-control" })
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Mobile No :</label>
-                            <div class="col-md-10">
-                                <div class="input-control select" style="width:100%">
-                                    @Html.TextBoxFor(x => x.MobileNo, new { @class = "form-control", @type = "number" })
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Mobile No :</label>
+                                    <div class="col-md-9">
+                                        <div class="input-control select" style="width:100%">
+                                            @Html.TextBoxFor(x => x.MobileNo, new { @class = "form-control", @type = "number" })
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Email :</label>
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(x => x.EmailId, new { @class = "form-control" })
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Email :</label>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(x => x.EmailId, new { @class = "form-control" })
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
